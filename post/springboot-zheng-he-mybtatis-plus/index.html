@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SpringBoot整合Mybtatis-Plus | 阿杰笔记</title>
 <meta name="description" content="等你等了八万里，如期未至" />
-<link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1565870180806">
+<link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1565870383512">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://sunzhujie.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://sunzhujie.github.io">
-  <img class="avatar" src="https://sunzhujie.github.io/images/avatar.png?v=1565870180806" alt="">
+  <img class="avatar" src="https://sunzhujie.github.io/images/avatar.png?v=1565870383512" alt="">
   </a>
   <h1 class="site-title">
     阿杰笔记
@@ -90,39 +90,53 @@
                 <h2 id="简介">简介</h2>
 <p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p>
 <h2 id="添加依赖">添加依赖</h2>
-<dependency>
-    <groupId>com.baomidou</groupId>
-    <artifactId>mybatis-plus-boot-starter</artifactId>
-    <version>3.1.2</version>
-</dependency>
-## 特性
-### 无侵入：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑
-### 损耗小：启动即会自动注入基本 CURD，性能基本无损耗，直接面向对象操作
-### 强大的 CRUD 操作：内置通用 Mapper、通用 Service，仅仅通过少量配置即可实现单表大部分 CRUD 操作，更有强大的条件构造器，满足各类使用需求
-### 支持 Lambda 形式调用：通过 Lambda 表达式，方便的编写各类查询条件，无需再担心字段写错
-### 支持主键自动生成：支持多达 4 种主键策略（内含分布式唯一 ID 生成器 - Sequence），可自由配置，完美解决主键问题
-### 支持 ActiveRecord 模式：支持 ActiveRecord 形式调用，实体类只需继承 Model 类即可进行强大的 CRUD 操作
-### 支持自定义全局通用操作：支持全局通用方法注入（ Write once, use anywhere ）
-### 内置代码生成器：采用代码或者 Maven 插件可快速生成 Mapper 、 Model 、 Service 、 Controller 层代码，支持模板引擎，更有超多自定义配置等您来使用
-### 内置分页插件：基于 MyBatis 物理分页，开发者无需关心具体操作，配置好插件之后，写分页等同于普通 List 查询
-### 分页插件支持多种数据库：支持 MySQL、MariaDB、Oracle、DB2、H2、HSQL、SQLite、Postgre、SQLServer2005、SQLServer 等多种数据库
-### 内置性能分析插件：可输出 Sql 语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询
-### 内置全局拦截插件：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作
-## 通用Mapper
-- 实体类Book.java
-```
-public class Book {
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;3.1.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h2 id="特性">特性</h2>
+<h3 id="无侵入">无侵入：</h3>
+<p>只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑</p>
+<h3 id="损耗小">损耗小：</h3>
+<p>启动即会自动注入基本 CURD，性能基本无损耗，直接面向对象操作</p>
+<h3 id="强大的-crud-操作">强大的 CRUD 操作：</h3>
+<p>内置通用 Mapper、通用 Service，仅仅通过少量配置即可实现单表大部分 CRUD 操作，更有强大的条件构造器，满足各类使用需求</p>
+<h3 id="支持-lambda-形式调用">支持 Lambda 形式调用：</h3>
+<p>通过 Lambda 表达式，方便的编写各类查询条件，无需再担心字段写错</p>
+<h3 id="支持主键自动生成">支持主键自动生成：</h3>
+<p>支持多达 4 种主键策略（内含分布式唯一 ID 生成器 - Sequence），可自由配置，完美解决主键问题</p>
+<h3 id="支持-activerecord-模式">支持 ActiveRecord 模式：</h3>
+<p>支持 ActiveRecord 形式调用，实体类只需继承 Model 类即可进行强大的 CRUD 操作</p>
+<h3 id="支持自定义全局通用操作">支持自定义全局通用操作：</h3>
+<p>支持全局通用方法注入（ Write once, use anywhere ）</p>
+<h3 id="内置代码生成器">内置代码生成器：</h3>
+<p>采用代码或者 Maven 插件可快速生成 Mapper 、 Model 、 Service 、 Controller 层代码，支持模板引擎，更有超多自定义配置等您来使用</p>
+<h3 id="内置分页插件">内置分页插件：</h3>
+<p>基于 MyBatis 物理分页，开发者无需关心具体操作，配置好插件之后，写分页等同于普通 List 查询</p>
+<h3 id="分页插件支持多种数据库">分页插件支持多种数据库：</h3>
+<p>支持 MySQL、MariaDB、Oracle、DB2、H2、HSQL、SQLite、Postgre、SQLServer2005、SQLServer 等多种数据库</p>
+<h3 id="内置性能分析插件">内置性能分析插件：</h3>
+<p>可输出 Sql 语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询</p>
+<h3 id="内置全局拦截插件">内置全局拦截插件：</h3>
+<p>提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作</p>
+<h2 id="通用mapper">通用Mapper</h2>
+<ul>
+<li>实体类Book.java</li>
+</ul>
+<pre><code>public class Book {
     //使用TableId注解标记主键对应的属性
     //value：主键的字段名
     //type：主键的生成策略，IdType.AUTO：使用数据库的自增
-    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = &quot;id&quot;,type = IdType.AUTO)
     private Long id;
     private String name;
     private String author;
     private Double price;
     //省略getter和setter
 }
-```
+</code></pre>
 <ul>
 <li>让Mapper接口继承自BaseMapper接口</li>
 </ul>
@@ -305,7 +319,24 @@ for (Book book : books) {
 <li>
 <ul>
 <li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
-<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96">添加依赖</a>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96">添加依赖</a></li>
+<li><a href="#%E7%89%B9%E6%80%A7">特性</a>
+<ul>
+<li><a href="#%E6%97%A0%E4%BE%B5%E5%85%A5">无侵入：</a></li>
+<li><a href="#%E6%8D%9F%E8%80%97%E5%B0%8F">损耗小：</a></li>
+<li><a href="#%E5%BC%BA%E5%A4%A7%E7%9A%84-crud-%E6%93%8D%E4%BD%9C">强大的 CRUD 操作：</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81-lambda-%E5%BD%A2%E5%BC%8F%E8%B0%83%E7%94%A8">支持 Lambda 形式调用：</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E4%B8%BB%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90">支持主键自动生成：</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81-activerecord-%E6%A8%A1%E5%BC%8F">支持 ActiveRecord 模式：</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C">支持自定义全局通用操作：</a></li>
+<li><a href="#%E5%86%85%E7%BD%AE%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8">内置代码生成器：</a></li>
+<li><a href="#%E5%86%85%E7%BD%AE%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6">内置分页插件：</a></li>
+<li><a href="#%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E6%95%B0%E6%8D%AE%E5%BA%93">分页插件支持多种数据库：</a></li>
+<li><a href="#%E5%86%85%E7%BD%AE%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E6%8F%92%E4%BB%B6">内置性能分析插件：</a></li>
+<li><a href="#%E5%86%85%E7%BD%AE%E5%85%A8%E5%B1%80%E6%8B%A6%E6%88%AA%E6%8F%92%E4%BB%B6">内置全局拦截插件：</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%9A%E7%94%A8mapper">通用Mapper</a>
 <ul>
 <li><a href="#%E5%A2%9E%E5%88%A0%E6%94%B9">增删改</a></li>
 <li><a href="#%E6%9F%A5%E8%AF%A2">查询</a></li>
