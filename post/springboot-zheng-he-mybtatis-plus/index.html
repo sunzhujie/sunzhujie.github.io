@@ -1,22 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://sunzhujie.github.io</id>
-    <title>Gridea</title>
-    <updated>2019-08-15T11:55:19.456Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://sunzhujie.github.io"/>
-    <link rel="self" href="https://sunzhujie.github.io/atom.xml"/>
-    <subtitle>等你等了八万里，如期未至</subtitle>
-    <logo>https://sunzhujie.github.io/images/avatar.png</logo>
-    <icon>https://sunzhujie.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
-    <entry>
-        <title type="html"><![CDATA[SpringBoot整合Mybtatis-Plus]]></title>
-        <id>https://sunzhujie.github.io/post/springboot-zheng-he-mybtatis-plus</id>
-        <link href="https://sunzhujie.github.io/post/springboot-zheng-he-mybtatis-plus">
-        </link>
-        <updated>2019-08-15T11:49:30.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="简介">简介</h2>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SpringBoot整合Mybtatis-Plus | Gridea</title>
+<meta name="description" content="等你等了八万里，如期未至" />
+<link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1565870117389">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sunzhujie.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://sunzhujie.github.io">
+  <img class="avatar" src="https://sunzhujie.github.io/images/avatar.png?v=1565870117389" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    等你等了八万里，如期未至
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              SpringBoot整合Mybtatis-Plus
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-08-15
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="简介">简介</h2>
 <p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p>
 <h2 id="添加依赖">添加依赖</h2>
 <dependency>
@@ -227,143 +298,91 @@ for (Book book : books) {
     System.out.println(&quot;book = &quot; + book);
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于Mybatis-plus所需要的配置]]></title>
-        <id>https://sunzhujie.github.io/post/guan-yu-mybatis-plus-suo-xu-yao-de-pei-zhi</id>
-        <link href="https://sunzhujie.github.io/post/guan-yu-mybatis-plus-suo-xu-yao-de-pei-zhi">
-        </link>
-        <updated>2019-08-15T11:44:54.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="maven">maven</h2>
-<pre><code>&lt;dependency&gt;
-            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
-            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
-            &lt;version&gt;3.1.2&lt;/version&gt;
-        &lt;/dependency&gt;
-</code></pre>
-<h2 id="yml">YML</h2>
-<pre><code>mybatis-plus:
-  global-config:
-    db-config:
-      logic-delete-value: 0 //默认逻辑已删除
-      logic-not-delete-value: 1  //默认逻辑未删除
-  configuration:
-    map-underscore-to-camel-case: true //驼峰命名法
-  type-aliases-package: com.oaec.tabledemo.po; //类别名
-  mapper-locations: classpath:mapper/*.xml //mapper
-</code></pre>
-<h2 id="其他yml">其他YML</h2>
-<pre><code>spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/demo
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
-  thymeleaf:
-    cache: false
-  jackson:
-    date-format: yyyy-MM-dd
-    time-zone: GMT+8 //时区
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
-  type-aliases-package: com.oaec.tabledemo.po;
-  mapper-locations: classpath:mapper/*.xml
-server:
-  port: 8888
-pagehelper:
-  helper-dialect: mysql
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Bootstrap-Table的使用]]></title>
-        <id>https://sunzhujie.github.io/post/bootstrap-table</id>
-        <link href="https://sunzhujie.github.io/post/bootstrap-table">
-        </link>
-        <updated>2019-08-15T11:34:25.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="所需要的文件">所需要的文件</h2>
-<p><img src="https://sunzhujie.github.io/post-images/1565869358782.png" alt=""></p>
-<h2 id="html">HTML</h2>
-<pre><code>  &lt;script type=&quot;text/javascript&quot;&gt;
-        function del(id){
-            alert(id)
-        }
-        function edit(id){
-            alert(id)
-        }
-        $(function () {
-            $(&quot;#booktable&quot;).bootstrapTable({
-                url:&quot;/books&quot;,
-                method:&quot;get&quot;,
-                dataField:&quot;data&quot;,
-                pagination:true,//开启分页
-                sidePagination:'client', //分页方式
-                pageNumber:1, //默认显示第几页
-                pageSize:5, //每条页数
-                search:true, //开启前端搜索
-                strictSearch:false,// 设置为true 搜索模式为完全匹配,不支持模糊查询
-                showColumns:true, // 开启列的显示隐藏
-                showRefresh: true,
-                minimumCountColumns: 2,//最少显示多少列
-                uniqueId:&quot;id&quot; ,//每条记录的唯一标识
-                columns:[
-                    {
-                        checkbox:true
-                    },
-                    {
-                        field:&quot;id&quot;,
-                        title:&quot;编号&quot;
-                    },
-                    {
-                        field:&quot;name&quot;,
-                        title:&quot;书名&quot;
-                    },
-                    {
-                        field:&quot;author&quot;,
-                        title:&quot;作者&quot;
-                    },
-                    {
-                        field:&quot;price&quot;,
-                        title:&quot;价格&quot;
-                    },
 
-                    {
-                        field:&quot;status&quot;,
-                        title:&quot;状态&quot;,
-                        formatter :function (value,row,index) {
-                            if(value ===0){
-                                return '&lt;span class=&quot;label label-danger&quot;&gt;禁用&lt;/span&gt;';
-                            }else if( value ===1){
-                                return '&lt;span class=&quot;label label-success&quot;&gt;正常&lt;/span&gt;';
-                            }
-                        }
-                    },
-                    {
-                        field:&quot;createTime&quot;,
-                        title:&quot;时间&quot;
-                    },
-                    {
-                        title:&quot;操作&quot;,
-                        formatter :function (value,row,index) {
-                            return '&lt;button class=&quot;btn btn-sm btn-primary&quot; onlick=&quot;edit('+row.id+')&quot;&gt;修改&lt;/button&gt;\n'+
-                                    '&lt;button class=&quot;btn btn-sm btn-danger&quot; onlick=&quot;del('+row.id+')&quot;&gt;删除&lt;/button&gt; ';
-                        }
-                    }
-                ]
-            })
-        })
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96">添加依赖</a>
+<ul>
+<li><a href="#%E5%A2%9E%E5%88%A0%E6%94%B9">增删改</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2">查询</a></li>
+<li><a href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2">分页查询</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%88%A0%E9%99%A4">逻辑删除</a></li>
+</ul>
+</li>
+</ul>
 
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body class=&quot;container&quot;&gt;
-        &lt;h1 class=&quot;&quot;&gt;图书列表&lt;/h1&gt;
-        &lt;button class=&quot;btn btn-success&quot;&gt;添加图书&lt;/button&gt;
-    &lt;table id=&quot;booktable&quot; class=&quot;table table-striped&quot;&gt;&lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-]]></content>
-    </entry>
-</feed>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sunzhujie.github.io/post/guan-yu-mybatis-plus-suo-xu-yao-de-pei-zhi">
+              <h3 class="post-title">
+                关于Mybatis-plus所需要的配置
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://sunzhujie.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

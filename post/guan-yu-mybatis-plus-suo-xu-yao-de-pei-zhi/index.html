@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gridea</title>
+<title>关于Mybatis-plus所需要的配置 | Gridea</title>
 <meta name="description" content="等你等了八万里，如期未至" />
 <link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1565870117389">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -70,75 +70,94 @@
   </div>
 </div>
 
-    
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/springboot-zheng-he-mybtatis-plus">
-        <h2 class="post-title">SpringBoot整合Mybtatis-Plus</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-15
-        </span>
-        <span>
-          3 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/guan-yu-mybatis-plus-suo-xu-yao-de-pei-zhi">
-        <h2 class="post-title">关于Mybatis-plus所需要的配置</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-15
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/bootstrap-table">
-        <h2 class="post-title">Bootstrap-Table的使用</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-15
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于Mybatis-plus所需要的配置
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-08-15
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="maven">maven</h2>
+<pre><code>&lt;dependency&gt;
+            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;3.1.2&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre>
+<h2 id="yml">YML</h2>
+<pre><code>mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 0 //默认逻辑已删除
+      logic-not-delete-value: 1  //默认逻辑未删除
+  configuration:
+    map-underscore-to-camel-case: true //驼峰命名法
+  type-aliases-package: com.oaec.tabledemo.po; //类别名
+  mapper-locations: classpath:mapper/*.xml //mapper
+</code></pre>
+<h2 id="其他yml">其他YML</h2>
+<pre><code>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  thymeleaf:
+    cache: false
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8 //时区
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.oaec.tabledemo.po;
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 8888
+pagehelper:
+  helper-dialect: mysql
+</code></pre>
 
-    
-        <div class="pagination-container">
-  
-  
-</div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#maven">maven</a></li>
+<li><a href="#yml">YML</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96yml">其他YML</a></li>
+</ul>
+</li>
+</ul>
 
-    
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sunzhujie.github.io/post/bootstrap-table">
+              <h3 class="post-title">
+                Bootstrap-Table的使用
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
   <a class="rss" href="https://sunzhujie.github.io/atom.xml" target="_blank">RSS</a>
