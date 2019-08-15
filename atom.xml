@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sunzhujie.github.io</id>
     <title>Gridea</title>
-    <updated>2019-08-15T01:48:41.379Z</updated>
+    <updated>2019-08-15T11:40:29.093Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sunzhujie.github.io"/>
     <link rel="self" href="https://sunzhujie.github.io/atom.xml"/>
@@ -10,6 +10,95 @@
     <logo>https://sunzhujie.github.io/images/avatar.png</logo>
     <icon>https://sunzhujie.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Bootstrap-Table的使用]]></title>
+        <id>https://sunzhujie.github.io/post/bootstrap-table</id>
+        <link href="https://sunzhujie.github.io/post/bootstrap-table">
+        </link>
+        <updated>2019-08-15T11:34:25.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="所需要的文件">所需要的文件</h2>
+<p><img src="https://sunzhujie.github.io/post-images/1565869006210.png" alt=""></p>
+<h2 id="html">HTML</h2>
+<pre><code>  &lt;script type=&quot;text/javascript&quot;&gt;
+        function del(id){
+            alert(id)
+        }
+        function edit(id){
+            alert(id)
+        }
+        $(function () {
+            $(&quot;#booktable&quot;).bootstrapTable({
+                url:&quot;/books&quot;,
+                method:&quot;get&quot;,
+                dataField:&quot;data&quot;,
+                pagination:true,//开启分页
+                sidePagination:'client', //分页方式
+                pageNumber:1, //默认显示第几页
+                pageSize:5, //每条页数
+                search:true, //开启前端搜索
+                strictSearch:false,// 设置为true 搜索模式为完全匹配,不支持模糊查询
+                showColumns:true, // 开启列的显示隐藏
+                showRefresh: true,
+                minimumCountColumns: 2,//最少显示多少列
+                uniqueId:&quot;id&quot; ,//每条记录的唯一标识
+                columns:[
+                    {
+                        checkbox:true
+                    },
+                    {
+                        field:&quot;id&quot;,
+                        title:&quot;编号&quot;
+                    },
+                    {
+                        field:&quot;name&quot;,
+                        title:&quot;书名&quot;
+                    },
+                    {
+                        field:&quot;author&quot;,
+                        title:&quot;作者&quot;
+                    },
+                    {
+                        field:&quot;price&quot;,
+                        title:&quot;价格&quot;
+                    },
+
+                    {
+                        field:&quot;status&quot;,
+                        title:&quot;状态&quot;,
+                        formatter :function (value,row,index) {
+                            if(value ===0){
+                                return '&lt;span class=&quot;label label-danger&quot;&gt;禁用&lt;/span&gt;';
+                            }else if( value ===1){
+                                return '&lt;span class=&quot;label label-success&quot;&gt;正常&lt;/span&gt;';
+                            }
+                        }
+                    },
+                    {
+                        field:&quot;createTime&quot;,
+                        title:&quot;时间&quot;
+                    },
+                    {
+                        title:&quot;操作&quot;,
+                        formatter :function (value,row,index) {
+                            return '&lt;button class=&quot;btn btn-sm btn-primary&quot; onlick=&quot;edit('+row.id+')&quot;&gt;修改&lt;/button&gt;\n'+
+                                    '&lt;button class=&quot;btn btn-sm btn-danger&quot; onlick=&quot;del('+row.id+')&quot;&gt;删除&lt;/button&gt; ';
+                        }
+                    }
+                ]
+            })
+        })
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body class=&quot;container&quot;&gt;
+        &lt;h1 class=&quot;&quot;&gt;图书列表&lt;/h1&gt;
+        &lt;button class=&quot;btn btn-success&quot;&gt;添加图书&lt;/button&gt;
+    &lt;table id=&quot;booktable&quot; class=&quot;table table-striped&quot;&gt;&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://sunzhujie.github.io/post/hello-gridea</id>
