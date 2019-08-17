@@ -1,0 +1,205 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>关于Spring的面试题 | 阿杰笔记</title>
+<meta name="description" content="等你等了八万里，如期未至" />
+<link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1566002577925">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sunzhujie.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://sunzhujie.github.io">
+  <img class="avatar" src="https://sunzhujie.github.io/images/avatar.png?v=1566002577925" alt="">
+  </a>
+  <h1 class="site-title">
+    阿杰笔记
+  </h1>
+  <p class="site-description">
+    等你等了八万里，如期未至
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于Spring的面试题
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-08-15
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="什么是spring">什么是Spring</h2>
+<p>Spring 是个java企业级应用的开源开发框架。Spring主要用来开发Java应用，但是有些扩展是针对构建J2EE平台的web应用。Spring 框架目标是简化Java企业级应用开发，并通过POJO为基础的编程模型促进良好的编程习惯。</p>
+<h2 id="使用spring框架的好处是什么">使用Spring框架的好处是什么？</h2>
+<p><strong>轻量</strong>：Spring 是轻量的，基本的版本大约2MB。<br>
+<strong>控制反转</strong>：Spring通过控制反转实现了松散耦合，对象们给出它们的依赖，而不是创建或查找依赖的对象们。<br>
+<strong>面向切面的编程(AOP)</strong>：Spring支持面向切面的编程，并且把应用业务逻辑和系统服务分开。<br>
+<strong>容器</strong>：Spring 包含并管理应用中对象的生命周期和配置。<br>
+MVC框架：Spring的WEB框架是个精心设计的框架，是Web框架的一个很好的替代品。<br>
+<strong>事务管理</strong>：Spring 提供一个持续的事务管理接口，可以扩展到上至本地事务下至全局事务（JTA）。<br>
+<strong>异常处理</strong>：Spring 提供方便的API把具体技术相关的异常（比如由JDBC，Hibernate or JDO抛出的）转化为一致的unchecked 异常</p>
+<h2 id="核心容器应用上下文-模块">核心容器（应用上下文) 模块</h2>
+<p>这是基本的Spring模块，提供spring 框架的基础功能，BeanFactory 是 任何以spring为基础的应用的核心。Spring 框架建立在此模块之上，它使Spring成为一个容器。</p>
+<h2 id="beanfactory-beanfactory-实现举例">BeanFactory – BeanFactory 实现举例。</h2>
+<p>这是基本的Spring模块，提供spring 框架的基础功能，BeanFactory 是 任何以spring为基础的应用的核心。Spring 框架建立在此模块之上，它使Spring成为一个容器。</p>
+<h2 id="解释aop模块">解释AOP模块</h2>
+<p>AOP模块用于发给我们的Spring应用做面向切面的开发， 很多支持由AOP联盟提供，这样就确保了Spring和其他AOP框架的共通性。这个模块将元数据编程引入Spring。</p>
+<h2 id="解释jdbc抽象和dao模块">解释JDBC抽象和DAO模块。</h2>
+<p>通过使用JDBC抽象和DAO模块，保证数据库代码的简洁，并能避免数据库资源错误关闭导致的问题，它在各种不同的数据库的错误信息之上，提供了一个统一的异常访问层。它还利用Spring的AOP 模块给Spring应用中的对象提供事务管理服务。</p>
+<h2 id="spring配置文件">Spring配置文件</h2>
+<p>Spring配置文件是个XML 文件，这个文件包含了类信息，描述了如何配置它们，以及如何相互调用。</p>
+<h2 id="什么是spring-ioc-容器">什么是Spring IOC 容器？</h2>
+<p>Spring IOC 负责创建对象，管理对象（通过依赖注入（DI），装配对象，配置对象，并且管理这些对象的整个生命周期。</p>
+<h2 id="有哪些不同类型的ioc依赖注入方式">有哪些不同类型的IOC（依赖注入）方式？</h2>
+<p>构造器依赖注入：构造器依赖注入通过容器触发一个类的构造器来实现的，该类有一系列参数，每个参数代表一个对其他类的依赖。<br>
+Setter方法注入：Setter方法注入是容器通过调用无参构造器或无参static工厂 方法实例化bean之后，调用该bean的setter方法，即实现了基于setter的依赖注入。<strong>最好的解决方案是用构造器参数实现强制依赖，setter方法实现可选依赖。</strong></p>
+<h2 id="什么是spring-beans">什么是Spring beans?</h2>
+<p>** Spring beans 是那些形成Spring应用的主干的java对象**。它们被Spring IOC容器初始化，装配，和管理。这些beans通过容器中配置的元数据创建。比如，以XML文件中<bean/> 的形式定义。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFspring">什么是Spring</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8spring%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A5%BD%E5%A4%84%E6%98%AF%E4%BB%80%E4%B9%88">使用Spring框架的好处是什么？</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E5%AE%B9%E5%99%A8%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87-%E6%A8%A1%E5%9D%97">核心容器（应用上下文) 模块</a></li>
+<li><a href="#beanfactory-beanfactory-%E5%AE%9E%E7%8E%B0%E4%B8%BE%E4%BE%8B">BeanFactory – BeanFactory 实现举例。</a></li>
+<li><a href="#%E8%A7%A3%E9%87%8Aaop%E6%A8%A1%E5%9D%97">解释AOP模块</a></li>
+<li><a href="#%E8%A7%A3%E9%87%8Ajdbc%E6%8A%BD%E8%B1%A1%E5%92%8Cdao%E6%A8%A1%E5%9D%97">解释JDBC抽象和DAO模块。</a></li>
+<li><a href="#spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">Spring配置文件</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFspring-ioc-%E5%AE%B9%E5%99%A8">什么是Spring IOC 容器？</a></li>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84ioc%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%96%B9%E5%BC%8F">有哪些不同类型的IOC（依赖注入）方式？</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFspring-beans">什么是Spring beans?</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sunzhujie.github.io/post/springboot-zheng-he-mybtatis-plus">
+              <h3 class="post-title">
+                SpringBoot整合Mybtatis-Plus
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://sunzhujie.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

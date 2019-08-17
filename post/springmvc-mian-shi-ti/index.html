@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>阿杰笔记</title>
+<title>SpringMVC面试题 | 阿杰笔记</title>
 <meta name="description" content="等你等了八万里，如期未至" />
 <link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1566002577925">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -70,132 +70,68 @@
   </div>
 </div>
 
-    
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/springboot-mian-shi-ti">
-        <h2 class="post-title">SpringBoot面试题</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-16
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/springmvc-mian-shi-ti">
-        <h2 class="post-title">SpringMVC面试题</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-16
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/guan-yu-spring">
-        <h2 class="post-title">关于Spring的面试题</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-15
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/springboot-zheng-he-mybtatis-plus">
-        <h2 class="post-title">SpringBoot整合Mybtatis-Plus</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-15
-        </span>
-        <span>
-          3 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/guan-yu-mybatis-plus-suo-xu-yao-de-pei-zhi">
-        <h2 class="post-title">关于Mybatis-plus所需要的配置</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-15
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="https://sunzhujie.github.io/post/bootstrap-table">
-        <h2 class="post-title">Bootstrap-Table的使用</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-08-15
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              SpringMVC面试题
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-08-16
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="springmvc工作原理">SpringMVC工作原理</h2>
+<p><img src="https://upload-images.jianshu.io/upload_images/4189525-1e95637030237aea.png?imageMogr2/auto-orient/" alt=""><br>
+【用户发送请求到前端控制器dispatcherservlet，前端控制器接收到请求之后调用处理器映射器，根据请求url找到具体的处理器，生成处理器对象返回给前端控制器，前端控制器通过处理器适配器调用处理器，执行处理器返回ModelAndView，处理器适配器将ModelAndView返回给前端控制器，前端控制器将ModelAndView传递给视图解析器，视图解析器解析后返回具体的view，前端控制器对view进行渲染视图后响应给用户】<br>
+1、用户发送请求至前端控制器DispatcherServlet<br>
+2、DispatcherServlet收到请求调用HandlerMapping处理器映射器。<br>
+3、处理器映射器根据请求url找到具体的处理器，生成处理器对象及处理器拦截器(如果有则生成)一并返回给DispatcherServlet。【此时处理器映射器返回的处理器对象包含：包名+类名+方法名】<br>
+4、DispatcherServlet通过HandlerAdapter处理器适配器调用处理器<br>
+5、执行处理器(Controller，也叫后端控制器)。<br>
+6、Controller执行完成返回ModelAndView<br>
+7、HandlerAdapter将controller执行结果ModelAndView返回给DispatcherServlet<br>
+8、DispatcherServlet将ModelAndView传给ViewReslover视图解析器【ModelAndView内部其实就是一个jsp文件的路径】<br>
+9、ViewReslover解析（读取jsp文件到内存中）后返回具体View<br>
+10、DispatcherServlet对View进行渲染视图（即将模型数据填充至视图中）。<br>
+11、DispatcherServlet响应用户<br>
+12、SpringMvc的控制器是不是单例模式,如果是,有什么问题,怎么解决？<br>
+是单例模式,所以在多线程访问的时候有线程安全问题,不要用同步,会影响性能的,解决方案是在控制器里面不能写字段</p>
 
-    
-        <div class="pagination-container">
-  
-  
-</div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#springmvc%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">SpringMVC工作原理</a></li>
+</ul>
+</li>
+</ul>
 
-    
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sunzhujie.github.io/post/guan-yu-spring">
+              <h3 class="post-title">
+                关于Spring的面试题
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
   <a class="rss" href="https://sunzhujie.github.io/atom.xml" target="_blank">RSS</a>

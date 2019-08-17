@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sunzhujie.github.io</id>
     <title>阿杰笔记</title>
-    <updated>2019-08-15T12:06:47.773Z</updated>
+    <updated>2019-08-17T00:44:05.405Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sunzhujie.github.io"/>
     <link rel="self" href="https://sunzhujie.github.io/atom.xml"/>
@@ -10,6 +10,149 @@
     <logo>https://sunzhujie.github.io/images/avatar.png</logo>
     <icon>https://sunzhujie.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 阿杰笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[SpringBoot面试题]]></title>
+        <id>https://sunzhujie.github.io/post/springboot-mian-shi-ti</id>
+        <link href="https://sunzhujie.github.io/post/springboot-mian-shi-ti">
+        </link>
+        <updated>2019-08-16T13:33:21.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="什么是-spring-boot">什么是 Spring Boot？</h2>
+<p>Spring Boot 是 Spring 开源组织下的子项目，是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度，简省了繁重的配置，提供了各种启动器，开发者能快速上手。</p>
+<h2 id="为什么要用-spring-boot优点">为什么要用 Spring Boot？优点</h2>
+<p>独立运行<br>
+简化配置<br>
+自动配置<br>
+无代码生成和XML配置<br>
+应用监控<br>
+上手容易</p>
+<h2 id="spring-boot-的核心配置文件有哪几个它们的区别是什么">Spring Boot 的核心配置文件有哪几个？它们的区别是什么？</h2>
+<p>Spring Boot 的核心配置文件是 application 和 bootstrap 配置文件。</p>
+<p>application 配置文件这个容易理解，主要用于 Spring Boot 项目的自动化配置。</p>
+<p>bootstrap 配置文件有以下几个应用场景。</p>
+<p>使用 Spring Cloud Config 配置中心时，这时需要在 bootstrap 配置文件中添加连接到配置中心的配置属性来加载外部配置中心的配置信息；<br>
+一些固定的不能被覆盖的属性；<br>
+一些加密/解密的场景；</p>
+<h2 id="spring-boot-的配置文件有哪几种格式它们有什么区别">Spring Boot 的配置文件有哪几种格式？它们有什么区别？</h2>
+<p>.properties 和 .yml，它们的区别主要是书写格式不同。<br>
+1).properties<br>
+app.user.name = javastack<br>
+2).yml<br>
+app:<br>
+user:<br>
+name: javastack<br>
+另外，.yml 格式不支持 @PropertySource 注解导入配置。</p>
+<h2 id="spring-boot-的核心注解是哪个它主要由哪几个注解组成的">Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？</h2>
+<p>启动类上面的注解是@SpringBootApplication，它也是 Spring Boot 的核心注解，主要组合包含了以下 3 个注解：<br>
+@SpringBootConfiguration：组合了 @Configuration 注解，实现配置文件的功能。<br>
+@EnableAutoConfiguration：打开自动配置的功能，也可以关闭某个自动配置的选项，如关闭数据源自动配置功能：<br>
+@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })。注解来开启 Spring Boot 的各项能力，如自动配置、组件扫描等<br>
+@ComponentScan：Spring组件扫描</p>
+<h2 id="开启-spring-boot-特性有哪几种方式">开启 Spring Boot 特性有哪几种方式？</h2>
+<p>1）继承spring-boot-starter-parent项目<br>
+2）导入spring-boot-dependencies项目依赖</p>
+<h2 id="spring-boot-需要独立的容器运行吗">Spring Boot 需要独立的容器运行吗？</h2>
+<p>可以不需要，内置了 Tomcat/ Jetty 等容器。</p>
+<h2 id="运行-spring-boot-有哪几种方式">运行 Spring Boot 有哪几种方式？</h2>
+<p>1）打包用命令或者放到容器中运行<br>
+2）用 Maven/ Gradle 插件运行<br>
+3）直接执行 main 方法运行<br>
+Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。</p>
+<h2 id="spring-boot-自动配置原理是什么">Spring Boot 自动配置原理是什么？</h2>
+<p>注解 @EnableAutoConfiguration, @Configuration, @ConditionalOnClass 就是自动配置的核心，首先它得是一个配置文件，其次根据类路径下是否有这个类去自动配置。</p>
+<h2 id="如何在-spring-boot-启动的时候运行一些特定的代码">如何在 Spring Boot 启动的时候运行一些特定的代码？</h2>
+<p>可以实现接口 ApplicationRunner 或者 CommandLineRunner，这两个接口实现方式一样，它们都只提供了一个 run 方法，具体请看这篇文章</p>
+<h2 id="springboot-实现热部署有哪几种方式">SpringBoot 实现热部署有哪几种方式？</h2>
+<p>主要有两种方式：<br>
+Spring Loaded<br>
+Spring-boot-devtools</p>
+<h2 id="spring-boot-可以兼容老-spring-项目吗如何做">Spring Boot 可以兼容老 Spring 项目吗，如何做？</h2>
+<p>可以兼容，使用 <code>@ImportResource</code> 注解导入老 Spring 项目配置文件。</p>
+<h2 id="保护-spring-boot-应用有哪些方法">保护 Spring Boot 应用有哪些方法？</h2>
+<p>在生产中使用HTTPS<br>
+使用Snyk检查你的依赖关系<br>
+升级到最新版本<br>
+启用CSRF保护<br>
+使用内容安全策略防止XSS攻击</p>
+<h2 id="spring-boot-2x-有什么新特性与-1x-有什么区别">Spring Boot 2.X 有什么新特性？与 1.X 有什么区别？</h2>
+<p>配置变更<br>
+JDK 版本升级<br>
+第三方类库升级<br>
+响应式 Spring 编程支持<br>
+HTTP/2 支持<br>
+配置属性绑定</p>
+<h2 id="你如何理解-spring-boot-配置加载顺序">你如何理解 Spring Boot 配置加载顺序？</h2>
+<p>在 Spring Boot 里面，可以使用以下几种方式来加载配置。<br>
+1）properties文件；<br>
+2）YAML文件；<br>
+3）系统环境变量；<br>
+4）命令行参数；</p>
+<h2 id="spring-boot-支持哪些日志框架推荐和默认的日志框架是哪个">Spring Boot 支持哪些日志框架？推荐和默认的日志框架是哪个？</h2>
+<p>Spring Boot 支持 Java Util Logging, Log4j2, Lockback 作为日志框架，如果你使用 Starters 启动器，Spring Boot 将使用 Logback 作为默认日志框架</p>
+<h2 id="spring-boot-有哪几种读取配置的方式">Spring Boot 有哪几种读取配置的方式？</h2>
+<p>Spring Boot 可以通过 @PropertySource,@Value,@Environment, @ConfigurationProperties 来绑定变量</p>
+<h2 id="如何在-spring-boot-启动的时候运行一些特定的代码-2">如何在 Spring Boot 启动的时候运行一些特定的代码？</h2>
+<p>可以实现接口 ApplicationRunner 或者 CommandLineRunner，这两个接口实现方式一样，它们都只提供了一个 run 方法，</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SpringMVC面试题]]></title>
+        <id>https://sunzhujie.github.io/post/springmvc-mian-shi-ti</id>
+        <link href="https://sunzhujie.github.io/post/springmvc-mian-shi-ti">
+        </link>
+        <updated>2019-08-16T00:43:52.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="springmvc工作原理">SpringMVC工作原理</h2>
+<p><img src="https://upload-images.jianshu.io/upload_images/4189525-1e95637030237aea.png?imageMogr2/auto-orient/" alt=""><br>
+【用户发送请求到前端控制器dispatcherservlet，前端控制器接收到请求之后调用处理器映射器，根据请求url找到具体的处理器，生成处理器对象返回给前端控制器，前端控制器通过处理器适配器调用处理器，执行处理器返回ModelAndView，处理器适配器将ModelAndView返回给前端控制器，前端控制器将ModelAndView传递给视图解析器，视图解析器解析后返回具体的view，前端控制器对view进行渲染视图后响应给用户】<br>
+1、用户发送请求至前端控制器DispatcherServlet<br>
+2、DispatcherServlet收到请求调用HandlerMapping处理器映射器。<br>
+3、处理器映射器根据请求url找到具体的处理器，生成处理器对象及处理器拦截器(如果有则生成)一并返回给DispatcherServlet。【此时处理器映射器返回的处理器对象包含：包名+类名+方法名】<br>
+4、DispatcherServlet通过HandlerAdapter处理器适配器调用处理器<br>
+5、执行处理器(Controller，也叫后端控制器)。<br>
+6、Controller执行完成返回ModelAndView<br>
+7、HandlerAdapter将controller执行结果ModelAndView返回给DispatcherServlet<br>
+8、DispatcherServlet将ModelAndView传给ViewReslover视图解析器【ModelAndView内部其实就是一个jsp文件的路径】<br>
+9、ViewReslover解析（读取jsp文件到内存中）后返回具体View<br>
+10、DispatcherServlet对View进行渲染视图（即将模型数据填充至视图中）。<br>
+11、DispatcherServlet响应用户<br>
+12、SpringMvc的控制器是不是单例模式,如果是,有什么问题,怎么解决？<br>
+是单例模式,所以在多线程访问的时候有线程安全问题,不要用同步,会影响性能的,解决方案是在控制器里面不能写字段</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于Spring的面试题]]></title>
+        <id>https://sunzhujie.github.io/post/guan-yu-spring</id>
+        <link href="https://sunzhujie.github.io/post/guan-yu-spring">
+        </link>
+        <updated>2019-08-15T12:06:50.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="什么是spring">什么是Spring</h2>
+<p>Spring 是个java企业级应用的开源开发框架。Spring主要用来开发Java应用，但是有些扩展是针对构建J2EE平台的web应用。Spring 框架目标是简化Java企业级应用开发，并通过POJO为基础的编程模型促进良好的编程习惯。</p>
+<h2 id="使用spring框架的好处是什么">使用Spring框架的好处是什么？</h2>
+<p><strong>轻量</strong>：Spring 是轻量的，基本的版本大约2MB。<br>
+<strong>控制反转</strong>：Spring通过控制反转实现了松散耦合，对象们给出它们的依赖，而不是创建或查找依赖的对象们。<br>
+<strong>面向切面的编程(AOP)</strong>：Spring支持面向切面的编程，并且把应用业务逻辑和系统服务分开。<br>
+<strong>容器</strong>：Spring 包含并管理应用中对象的生命周期和配置。<br>
+MVC框架：Spring的WEB框架是个精心设计的框架，是Web框架的一个很好的替代品。<br>
+<strong>事务管理</strong>：Spring 提供一个持续的事务管理接口，可以扩展到上至本地事务下至全局事务（JTA）。<br>
+<strong>异常处理</strong>：Spring 提供方便的API把具体技术相关的异常（比如由JDBC，Hibernate or JDO抛出的）转化为一致的unchecked 异常</p>
+<h2 id="核心容器应用上下文-模块">核心容器（应用上下文) 模块</h2>
+<p>这是基本的Spring模块，提供spring 框架的基础功能，BeanFactory 是 任何以spring为基础的应用的核心。Spring 框架建立在此模块之上，它使Spring成为一个容器。</p>
+<h2 id="beanfactory-beanfactory-实现举例">BeanFactory – BeanFactory 实现举例。</h2>
+<p>这是基本的Spring模块，提供spring 框架的基础功能，BeanFactory 是 任何以spring为基础的应用的核心。Spring 框架建立在此模块之上，它使Spring成为一个容器。</p>
+<h2 id="解释aop模块">解释AOP模块</h2>
+<p>AOP模块用于发给我们的Spring应用做面向切面的开发， 很多支持由AOP联盟提供，这样就确保了Spring和其他AOP框架的共通性。这个模块将元数据编程引入Spring。</p>
+<h2 id="解释jdbc抽象和dao模块">解释JDBC抽象和DAO模块。</h2>
+<p>通过使用JDBC抽象和DAO模块，保证数据库代码的简洁，并能避免数据库资源错误关闭导致的问题，它在各种不同的数据库的错误信息之上，提供了一个统一的异常访问层。它还利用Spring的AOP 模块给Spring应用中的对象提供事务管理服务。</p>
+<h2 id="spring配置文件">Spring配置文件</h2>
+<p>Spring配置文件是个XML 文件，这个文件包含了类信息，描述了如何配置它们，以及如何相互调用。</p>
+<h2 id="什么是spring-ioc-容器">什么是Spring IOC 容器？</h2>
+<p>Spring IOC 负责创建对象，管理对象（通过依赖注入（DI），装配对象，配置对象，并且管理这些对象的整个生命周期。</p>
+<h2 id="有哪些不同类型的ioc依赖注入方式">有哪些不同类型的IOC（依赖注入）方式？</h2>
+<p>构造器依赖注入：构造器依赖注入通过容器触发一个类的构造器来实现的，该类有一系列参数，每个参数代表一个对其他类的依赖。<br>
+Setter方法注入：Setter方法注入是容器通过调用无参构造器或无参static工厂 方法实例化bean之后，调用该bean的setter方法，即实现了基于setter的依赖注入。<strong>最好的解决方案是用构造器参数实现强制依赖，setter方法实现可选依赖。</strong></p>
+<h2 id="什么是spring-beans">什么是Spring beans?</h2>
+<p>** Spring beans 是那些形成Spring应用的主干的java对象**。它们被Spring IOC容器初始化，装配，和管理。这些beans通过容器中配置的元数据创建。比如，以XML文件中<bean/> 的形式定义。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SpringBoot整合Mybtatis-Plus]]></title>
         <id>https://sunzhujie.github.io/post/springboot-zheng-he-mybtatis-plus</id>
