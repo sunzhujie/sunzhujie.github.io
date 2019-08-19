@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sunzhujie.github.io</id>
     <title>阿杰笔记</title>
-    <updated>2019-08-17T00:44:05.405Z</updated>
+    <updated>2019-08-19T11:35:50.614Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sunzhujie.github.io"/>
     <link rel="self" href="https://sunzhujie.github.io/atom.xml"/>
@@ -10,6 +10,366 @@
     <logo>https://sunzhujie.github.io/images/avatar.png</logo>
     <icon>https://sunzhujie.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 阿杰笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[Linux常用命令]]></title>
+        <id>https://sunzhujie.github.io/post/linux-chang-yong-ming-li</id>
+        <link href="https://sunzhujie.github.io/post/linux-chang-yong-ming-li">
+        </link>
+        <updated>2019-08-19T01:57:50.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>df -h磁盘使用情况</li>
+<li>su tom 切换用户</li>
+<li>pwd 当前目录</li>
+<li>ls 当前目录下文件目录 ls -l /usr为该命令要操作的对象</li>
+<li>cd		回到家目录</li>
+<li>cd ~	回到家目录</li>
+<li>cd /	回到根目录</li>
+<li>cd -	回到上次工作目录</li>
+<li>cd .	当前目录</li>
+<li>cd . .	回到上一级目录</li>
+<li>mkdir创建一个或多个新的空目录，常用选项参数“-p”用于递归创建多层目录<br>
+Linux标记<br>
+2019-08-16 3 min read<br>
+命令<br>
+命令格式：命令 参数 目标对象</li>
+</ul>
+<p>ls -l /ur 以列表的方式查看usr文件下目录文件<br>
+cd：切换目录</p>
+<p>-cd 回到家目录</p>
+<p>-cd~ 回到家目录</p>
+<p>-cd / 回到根目录</p>
+<p>-cd - 回到上次工作目录</p>
+<p>-cd . 当前目录</p>
+<p>-cd .. 回到上一级目录</p>
+<p>ls：查看当前文件夹下的所有文件夹</p>
+<p>ls -h 以单位显示大小<br>
+ls -l 列示文件和目录的详细信息，还有一种简介的写法：ll<br>
+pwd：查看当前工作目录的完整路径</p>
+<p>df：查看当前磁盘使用情况</p>
+<p>-h：使用K、M、G为单位显示<br>
+-a：显示所有文件系统的磁盘使用情况<br>
+-k：以k字节为单位显示<br>
+-T： 显示文件系统类型（T必须大写）<br>
+无论在哪个文件下输入 df -h等命令，都会显示同样的信息，因为该命令显示的是当前磁盘的使用情况<br>
+du：查看当前目录空间使用情况</p>
+<p>-h： 使用K、M、G为单位显示<br>
+-k：以KB(1024bytes)为单位输出<br>
+-m ：以MB为单位输出<br>
+-s：仅显示总计，只列出最后加总的值<br>
+可以组合使用，比如打开usr文件夹，键入du -hs 或者du -sh 可以查看以GB为单位显示的总计<br>
+yum install tree：安装tree</p>
+<p>su 用户名 ：切换用户</p>
+<p>su root<br>
+mkdir ：创建一个或者多个目录，用-p递归创建目录</p>
+<p>mkdir demo<br>
+mkdir a/b/c -p ：递归创建多级目录 mkdir -p a/b/c 也可以<br>
+touch：创建新文件</p>
+<p>touch a.log</p>
+<blockquote>
+<p>： 创建新文件</p>
+</blockquote>
+<blockquote>
+<p>b.log<br>
+cp：复制</p>
+</blockquote>
+<p>a目录下有a.log和b目录，将a.log，复制到b目录中：cd a 然后 cp a.log b<br>
+a目录下有a.log和b目录，将a.log，复制到b目录中，并改名为b.log：cd a 然后 cp a.log b/b.log<br>
+demo目录下有a目录，a目录下有b目录，b目录下有多个文件，将b目录复制到demo目录下和a目录同级：：cd demo/a 然后 cp b .. 会显示略过目录，因为b目录下还有文件，所以需要递归复制：cp -r b ..<br>
+mv：移动</p>
+<p>和上面的命令都一样，只不过把cp改成mv<br>
+重命名：比如把a目录下的a.log改成ab.log：mv a.log ab.log<br>
+删除</p>
+<p>删除a目录下的a.log：进入a目录后，rm a.log需要输入y确认才能删除，可以使用 rm -rf a.log来直接删除，不询问<br>
+可以直接用多个空格分隔多个文件名，批量删除<br>
+查看文件内容</p>
+<p>cat 文件名</p>
+<p>cat -n显示文件内容时，打印行号</p>
+<p>cat –b同上，但排除空行</p>
+<p>more 文件名：分屏查看，回车翻页，只能向下翻页，q或者ctrl + c退出</p>
+<p>less 文件名：分屏查看，可以向上向下键翻页 ，只有q能退出<br>
+head 文件名：前十行</p>
+<p>head -n x：显示文件头x行</p>
+<p>tail 文件名：后十行</p>
+<p>tail -n x：显示文件末尾x行<br>
+tail -f ：实时显示文件变化</p>
+<p>压缩</p>
+<p>zip 压缩文件名 源文件 ：压缩文件<br>
+zip a.zip a.log<br>
+或者直接写zip a a.log<br>
+zip -r 压缩文件名 源目录 ：压缩目录<br>
+zip -r a.zip a<br>
+unzip 压缩文件名 ：解压缩<br>
+unzip a.zip<br>
+压缩</p>
+<p>tar -zcvf 压缩包名.tar.gz 源文件<br>
+选项</p>
+<p>z : 压缩为tar.gz</p>
+<p>解压缩</p>
+<p>tar -zxvf 压缩包名.tar.gz</p>
+<p>选项</p>
+<p>x: 解压缩.tar.gz格式</p>
+<p>压缩多个文件：tar -zcvf test.tar.gz a.log b.log</p>
+<p>压缩目录不需要加-r，和压缩文件一样</p>
+<p>rpm -qa查看当前系统安装了哪些软件</p>
+<p>rpm -qa | grep gcc 查看gcc有没有安装<br>
+yum<br>
+安装软件<br>
+yum install xxx<br>
+搜搜<br>
+yum search java<br>
+vim<br>
+操作模式<br>
+命令模式<br>
+控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入Insert mode下，或者到 last line mode。</p>
+<p>插入模式<br>
+只有在Insert mode下，才可以做文字输入，按「ESC」键可回到命令模式。</p>
+<p>底行模式<br>
+将文件保存或退出vi，也可以设置编辑环境，如寻找字符串、列出行号……等。</p>
+<p>基本命令<br>
+vim + 文件名：打开后光标位于文件最后一行<br>
+vim +n 文件名：打开后光标位于文件第n行<br>
+vim +/xxx 文件名：打开后光标位于xxx所在的行，可以用于快速定位指定内容<br>
+vim 文件a 文件b 文件c：打开（创建多个文件），底行模式“n”切换</p>
+<p>2</p>
+<p>3</p>
+<p>Linux<br>
+安装Java<br>
+yum search java :<br>
+yum install java-1.8.0-openjdk ：安装jre<br>
+yum install java-1.8.0-openjdk-devel ：安装jdk，直接安装这个也可以，上面的那个会被自动安装<br>
+安装的时候加-y参数可以不用输入y安装，直接安装<br>
+安装mysql<br>
+yum search mariadb<br>
+yum install mariadb-server<br>
+启动sql：systemctl start mariadb<br>
+设置用户名和密码：mysqladmin -u root password zhangjia<br>
+允许mysql的root用户远程登录<br>
+GRANT ALL PRIVILEGES ON <em>.</em> TO 'root'@'%' IDENTIFIED BY '123456';<br>
+GRANT ALL PRIVILEGES ON <em>.</em> TO 'root'@'localhost' IDENTIFIED BY '123456';<br>
+FLUSH PRIVILEGES;</p>
+<h1 id="其中by后面的密码就是yml文件中配置的密码yml中的密码要随着这个密码而更改还可以直接用mysqladmin来设置这个by后面的密码">其中by后面的密码就是yml文件中配置的密码，yml中的密码要随着这个密码而更改，还可以直接用mysqladmin来设置这个by后面的密码</h1>
+<p>安装Tomcat<br>
+打开安装目录：cd /usr/local</p>
+<p>下载Tomcat：wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.43/bin/apache-tomcat-8.5.43.tar.gz</p>
+<p>解压缩安装包：tar -zxvf apache-tomcat-8.5.43.tar.gz</p>
+<p>启动Tomcat：进入bin目录，输入./startup.sh启动tomcat</p>
+<p>4.1关闭tomcat：<code>./showdown.sh</code><br>
+关闭防火墙：systemctl stop firewalld.service</p>
+<p>ifconfig查看ip</p>
+<p>部署SpringBoot的应用程序<br>
+将项目打包<br>
+mvn package<br>
+导出数据<br>
+使用Navicat导出SQL文件<br>
+导入数据<br>
+使用Navicat导入SQL文件<br>
+将打包好的jar文件上传到服务器<br>
+使用xftp上传文件<br>
+在服务器启动jar文件<br>
+java -jar xxx.jar<br>
+后台启动：nohup java -jar xxx.jar &amp;<br>
+通过进程结束程序<br>
+ps -ef | grep java，可以看到进程的id<br>
+kill 进程id<br>
+自动联网<br>
+cd /etc/sysconfig/netword-scripts<br>
+vim ifcfg ，将ONBOOT修改为yes<br>
+补充<br>
+红色：压缩文件<br>
+蓝色：目录<br>
+linux不是根据扩展名来判断文件类型，但是建议写上<br>
+根目录下bin/sib和usr下bin/sbib的区别<br>
+根目录下的bin和sbin存放系统本身带的一些命令<br>
+usr目下的bin和sbin存放的是一些后来安装的软件命令<br>
+root用户的家目录是root，普通用户的家目录是home下的用户名的那个文件夹<br>
+任意目录下直接输入cd回车，也可以进入家目录<br>
+ctrl + l ：清屏<br>
+查找tree命令在哪：which tree</p>
+<p>联网：dhclient</p>
+<p>重启 init 6</p>
+<p>关机 init 0</p>
+<p>向上翻页：shift + pg up</p>
+<p>向下翻页：shift + pg on</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ajax面试题]]></title>
+        <id>https://sunzhujie.github.io/post/ajax-mian-shi-ti</id>
+        <link href="https://sunzhujie.github.io/post/ajax-mian-shi-ti">
+        </link>
+        <updated>2019-08-18T10:33:26.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="什么是ajaxajax作用是什么">什么是ajax？ajax作用是什么？</h2>
+<p>AJAX是“Asynchronous JavaScript and XML”的缩写。他是指一种创建交互式网页应用的网页开发技术。<br>
+客户端与服务器，可以在【不必刷新整个浏览器】的情况下，与服务器进行异步通讯的技术</p>
+<h2 id="ajax应用和传统web应用有什么不同">AJAX应用和传统Web应用有什么不同？</h2>
+<p>传统的web前端与后端的交互中，浏览器直接访问Tomcat的Servlet来获取数据。Servlet通过转发把数据发送给浏览器。<br>
+当我们使用AJAX之后，浏览器是先把请求发送到XMLHttpRequest异步对象之中，异步对象对请求进行封装，然后再与发送给服务器。服务器并不是以转发的方式响应，而是以流的方式把数据返回给浏览器<br>
+XMLHttpRequest异步对象会不停监听服务器状态的变化，得到服务器返回的数据，就写到浏览器上【因为不是转发的方式，所以是无刷新就能够获取服务器端的数据】</p>
+<h2 id="请介绍一下xmlhttprequest对象">请介绍一下XMLhttprequest对象</h2>
+<p>Ajax的核心是JavaScript对象XmlHttpRequest。该对象在Internet Explorer 5中首次引入，它是一种支持异步请求的技术。简而言之，XmlHttpRequest使您可以使用JavaScript向服务器提出请求并处理响应，而不阻塞用户。通XMLHttpRequest对象，Web开发人员可以在页面加载以后进行页面的局部更新</p>
+<h2 id="介绍一下xmlhttprequest对象的常用方法和属性方法">介绍一下XMLHttpRequest对象的常用方法和属性方法</h2>
+<h3 id="方法">方法</h3>
+<p>open()(String method,String url,boolean asynch,String username,String password)<br>
+send(content)<br>
+setRequestHeader(String header,String value)<br>
+getAllResponseHeaders()<br>
+getResponseHeader(String header)<br>
+abort()</p>
+<h3 id="常用的方法就是黑色粗体的前三个">常用的方法就是黑色粗体的前三个</h3>
+<h4 id="open该方法创建http请求">open()：该方法创建http请求</h4>
+<p>第一个参数是指定提交方式(post、get)<br>
+第二个参数是指定要提交的地址是哪<br>
+第三个参数是指定是异步还是同步(true表示异步，false表示同步)<br>
+第四和第五参数在http认证的时候会用到。是可选的</p>
+<h4 id="setrequestheaderstring-headerstring-value设置消息头使用post方式才会使用到get方法并不需要调用该方法">setRequestHeader(String header,String value)：设置消息头（使用post方式才会使用到，get方法并不需要调用该方法）</h4>
+<p>xmlhttp.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);</p>
+<h4 id="sendcontent发送请求给服务器">send(content)：发送请求给服务器</h4>
+<p>如果是get方式，并不需要填写参数，或填写null<br>
+如果是post方式，把要提交的参数写上去</p>
+<h3 id="属性">属性</h3>
+<h4 id="onreadystatechange请求状态改变的事件触发器readystate变化时会调用此方法一般用于指定回调函数">onreadystatechange：请求状态改变的事件触发器（readyState变化时会调用此方法），一般用于指定回调函数</h4>
+<p>readyState：请求状态readyState一改变，回调函数被调用，它有5个状态<br>
+0：未初始化<br>
+1：open方法成功调用以后<br>
+2：服务器已经应答客户端的请求<br>
+3：交互中。Http头信息已经接收，响应数据尚未接收。<br>
+4：完成。数据接收完成<br>
+responseText：服务器返回的文本内容<br>
+responseXML：服务器返回的兼容DOM的XML内容<br>
+status：服务器返回的状态码<br>
+statusText：服务器返回状态码的文本信息<br>
+上面有两个地方都提及了回调函数，回调函数是什么？？<br>
+回调函数就是接收服务器返回的内容！</p>
+<h2 id="ajax的实现流程是怎样的">Ajax的实现流程是怎样的？</h2>
+<p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.<br>
+(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.<br>
+(3)设置响应HTTP请求状态变化的函数.<br>
+(4)发送HTTP请求.<br>
+(5)获取异步调用返回的数据.<br>
+(6)使用JavaScript和DOM实现局部刷新.</p>
+<h2 id="ajax请求总共有多少种callback">AJAX请求总共有多少种CALLBACK</h2>
+<p>Ajax请求总共有八种Callback<br>
+onSuccess<br>
+onFailure<br>
+onUninitialized<br>
+onLoading<br>
+onLoaded<br>
+onInteractive<br>
+onComplete<br>
+onException</p>
+<h2 id="ajax有哪些有点和缺点">AJAX有哪些有点和缺点？</h2>
+<h3 id="优点">优点：</h3>
+<p>1、最大的一点是页面无刷新，用户的体验非常好。<br>
+2、使用异步方式与服务器通信，具有更加迅速的响应能力。<br>
+3、可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，ajax的原则是“按需取数据”，可以最大程度的减少冗余请求，和响应对服务器造成的负担。<br>
+4、基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。</p>
+<h3 id="缺点">缺点：</h3>
+<p>1、ajax不支持浏览器back按钮。<br>
+2、安全问题 AJAX暴露了与服务器交互的细节。<br>
+3、对搜索引擎的支持比较弱。<br>
+4、破坏了程序的异常机制。<br>
+5、不容易调试。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Redis面试题]]></title>
+        <id>https://sunzhujie.github.io/post/redis-mian-shi</id>
+        <link href="https://sunzhujie.github.io/post/redis-mian-shi">
+        </link>
+        <updated>2019-08-18T10:25:11.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="什么是redis">什么是Redis？</h2>
+<p>Redis 是一个使用 C 语言写成的，开源的 key-value 数据库。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set --有序集合)和hash（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同方式的排序。与memcached一样，为了保证效率，数据都是缓存在内存中。区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。目前，Vmware在资助着redis项目的开发和维护</p>
+<h2 id="使用redis有哪些好处">使用redis有哪些好处？</h2>
+<p>(1) 速度快，因为数据存在内存中，类似于HashMap，HashMap的优势就是查找和操作的时间复杂度都是O(1)<br>
+(2)支持丰富数据类型，支持string，list，set，sorted set，hash<br>
+(3) 支持事务 ：redis对事务是部分支持的，如果是在入队时报错，那么都不会执行；在非入队时报错，那么成功的就会成功执行。详细了解请参考：《Redis事务介绍（四）》：blog.csdn.net/cuipeng0916…<br>
+redis监控：锁的介绍<br>
+(4) 丰富的特性：可用于缓存，消息，按key设置过期时间，过期后将会自动删除</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Servlet面试题]]></title>
+        <id>https://sunzhujie.github.io/post/servlet-mian-shi-ti</id>
+        <link href="https://sunzhujie.github.io/post/servlet-mian-shi-ti">
+        </link>
+        <updated>2019-08-17T11:09:47.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="servlet是什么">Servlet是什么？</h2>
+<p>Servlet是一种服务器端的Java应用程序，具有独立于平台和协议的特性,可以生成动态的Web页面。 它担当客户请求（Web浏览器或其他HTTP客户程序）与服务器响应（HTTP服务器上的数据库或应用程序）的中间层。 　　Servlet是位于Web 服务器内部的服务器端的Java应用程序，与传统的从命令行启动的Java应用程序不同，Servlet由Web服务器进行加载，该Web服务器必须包含支持Servlet的Java虚拟机。<br>
+Servlet是用来处理客户端请求并产生动态网页内容的Java类</p>
+<h2 id="说一说servlet的生命周期">说一说Servlet的生命周期?</h2>
+<p>Servlet有良好的生存期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生存期由javax.servlet.Servlet接口的init,service和destroy方法表达。 Servlet被服务器实例化后，容器运行其init方法，请求到达时运行其service方法，service方法自动派遣运行与请求对应的doXXX方法（doGet，doPost）等，当服务器决定将实例销毁的时候调用其destroy方法。<br>
+与cgi的区别在于Servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于Servlet。<br>
+servlet的生命周期<br>
+web容器加载servlet，生命周期开始。通过调用servlet的init()方法进行servlet的初始化。通过调用service()方法实现，根据请求的不同调用不同的do***()方法。结束服务，web容器调用servlet的destroy()方法。</p>
+<h2 id="jsp和servlet有哪些相同点和不同点他们之间的联系是什么">JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？</h2>
+<p>JSP是Servlet技术的扩展，本质上是Servlet的简易方式，更强调应用的外表表达。JSP编译后是&quot;类servlet&quot;。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。JSP侧重于视图，Servlet主要用于控制逻辑。</p>
+<h2 id="四种会话跟踪技术">四种会话跟踪技术</h2>
+<p>1）page否是代表与一个页面相关的对象和属性。一个页面由一个编译好的 Java servlet 类（可以带有任何的 include 指令，但是没有 include 动作）表示。这既包括 servlet 又包括被编译成 servlet 的 JSP 页面</p>
+<p>2）request是是代表与 Web 客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个 Web 组件（由于 forward 指令和 include 动作的关系）</p>
+<p>3）session是是代表与用于某个 Web 客户机的一个用户体验相关的对象和属性。一个 Web 会话可以也经常会跨越多个客户机请求</p>
+<p>4）application是是代表与整个 Web 应用程序相关的对象和属性。这实质上是跨越整个 Web 应用程序，包括多个页面、请求和会话的一个全局作用域</p>
+<h2 id="request对象的主要方法">Request对象的主要方法</h2>
+<p>setAttribute(String name,Object)：设置名字为name的request的参数值<br>
+getAttribute(String name)：返回由name指定的属性值<br>
+getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例<br>
+getCookies()：返回客户端的所有Cookie对象，结果是一个Cookie数组<br>
+getCharacterEncoding()：返回请求中的字符编码方式<br>
+getContentLength()：返回请求的Body的长度<br>
+getHeader(String name)：获得HTTP协议定义的文件头信息<br>
+getHeaders(String name)：返回指定名字的request Header的所有值，结果是一个枚举的实例<br>
+getHeaderNames()：返回所以request Header的名字，结果是一个枚举的实例<br>
+getInputStream()：返回请求的输入流，用于获得请求中的数据<br>
+getMethod()：获得客户端向服务器端传送数据的方法<br>
+getParameter(String name)：获得客户端传送给服务器端的有name指定的参数值<br>
+getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例<br>
+getParameterValues(String name)：获得有name指定的参数的所有值<br>
+getProtocol()：获取客户端向服务器端传送数据所依据的协议名称<br>
+getQueryString()：获得查询字符串<br>
+getRequestURI()：获取发出请求字符串的客户端地址<br>
+getRemoteAddr()：获取客户端的IP地址<br>
+getRemoteHost()：获取客户端的名字<br>
+getSession([Boolean create])：返回和请求相关Session<br>
+getServerName()：获取服务器的名字<br>
+getServletPath()：获取客户端所请求的脚本文件的路径<br>
+getServerPort()：获取服务器的端口号<br>
+removeAttribute(String name)：删除请求中的一个属性</p>
+<h2 id="servlet执行时一般实现哪几个方法">Servlet执行时一般实现哪几个方法？</h2>
+<p>public void init(ServletConfig config)<br>
+public ServletConfig getServletConfig()<br>
+public String getServletInfo()<br>
+public void service(ServletRequest request,ServletResponse response)<br>
+public void destroy()</p>
+<h2 id="描述cookie和session的作用区别和各自的应用范围session工作原理">描述Cookie和Session的作用，区别和各自的应用范围，Session工作原理。</h2>
+<p>1）cookie 是一种发送到客户浏览器的文本串句柄，并保存在客户机硬盘上，可以用来在某个WEB站点会话间持久的保持数据。</p>
+<p>2）session其实指的就是访问者从到达某个特定主页到离开为止的那段时间。 Session其实是利用Cookie进行信息处理的，当用户首先进行了请求后，服务端就在用户浏览器上创建了一个Cookie，当这个Session结束时，其实就是意味着这个Cookie就过期了。</p>
+<p>注：为这个用户创建的Cookie的名称是aspsessionid。这个Cookie的唯一目的就是为每一个用户提供不同的身份认证。</p>
+<p>3）cookie和session的共同之处在于：cookie和session都是用来跟踪浏览器用户身份的会话方式。</p>
+<p>4）cookie 和session的区别是：cookie数据保存在客户端，session数据保存在服务器端。</p>
+<p>5）session工作原理：session技术中所有的数据都保存在服务器上，客户端每次请求服务器的时候会发送当前会话的sessionid，服务器根据当前sessionid判断相应的用户数据标志，以确定用户是否登录或具有某种权限。</p>
+<h2 id="隐含对象是什么意思有哪些隐含对象内置对象">隐含对象是什么意思？有哪些隐含对象？内置对象</h2>
+<p>JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：<br>
+内置对象就是不需要声明和创建，直接可以使用的对象<br>
+out<br>
+可以向浏览器输出内容<br>
+request<br>
+请求<br>
+response<br>
+响应<br>
+pageContext<br>
+当前页面的上下文，可以获取其他的内置对象<br>
+session<br>
+会话，一般存储用户信息<br>
+applicaton<br>
+应用程序<br>
+page<br>
+指的是当前页面，相当于this<br>
+config<br>
+存储配置信息<br>
+exception</p>
+<h2 id="异常什么是表达式expression">异常什么是表达式(Expression)？</h2>
+<p>JSP表达式是Web服务器把脚本语言表达式的值转化成一个String对象，插入到返回给客户端的数据流中。表达式是在&lt;%=和%&gt;这两个标签之间定义的。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SpringBoot面试题]]></title>
         <id>https://sunzhujie.github.io/post/springboot-mian-shi-ti</id>

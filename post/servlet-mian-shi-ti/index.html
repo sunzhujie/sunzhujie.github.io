@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Servlet面试题 | 阿杰笔记</title>
+<meta name="description" content="等你等了八万里，如期未至" />
+<link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1566214547869">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sunzhujie.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://sunzhujie.github.io">
+  <img class="avatar" src="https://sunzhujie.github.io/images/avatar.png?v=1566214547869" alt="">
+  </a>
+  <h1 class="site-title">
+    阿杰笔记
+  </h1>
+  <p class="site-description">
+    等你等了八万里，如期未至
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Servlet面试题
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-08-17
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="servlet是什么">Servlet是什么？</h2>
+<p>Servlet是一种服务器端的Java应用程序，具有独立于平台和协议的特性,可以生成动态的Web页面。 它担当客户请求（Web浏览器或其他HTTP客户程序）与服务器响应（HTTP服务器上的数据库或应用程序）的中间层。 　　Servlet是位于Web 服务器内部的服务器端的Java应用程序，与传统的从命令行启动的Java应用程序不同，Servlet由Web服务器进行加载，该Web服务器必须包含支持Servlet的Java虚拟机。<br>
+Servlet是用来处理客户端请求并产生动态网页内容的Java类</p>
+<h2 id="说一说servlet的生命周期">说一说Servlet的生命周期?</h2>
+<p>Servlet有良好的生存期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生存期由javax.servlet.Servlet接口的init,service和destroy方法表达。 Servlet被服务器实例化后，容器运行其init方法，请求到达时运行其service方法，service方法自动派遣运行与请求对应的doXXX方法（doGet，doPost）等，当服务器决定将实例销毁的时候调用其destroy方法。<br>
+与cgi的区别在于Servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于Servlet。<br>
+servlet的生命周期<br>
+web容器加载servlet，生命周期开始。通过调用servlet的init()方法进行servlet的初始化。通过调用service()方法实现，根据请求的不同调用不同的do***()方法。结束服务，web容器调用servlet的destroy()方法。</p>
+<h2 id="jsp和servlet有哪些相同点和不同点他们之间的联系是什么">JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？</h2>
+<p>JSP是Servlet技术的扩展，本质上是Servlet的简易方式，更强调应用的外表表达。JSP编译后是&quot;类servlet&quot;。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。JSP侧重于视图，Servlet主要用于控制逻辑。</p>
+<h2 id="四种会话跟踪技术">四种会话跟踪技术</h2>
+<p>1）page否是代表与一个页面相关的对象和属性。一个页面由一个编译好的 Java servlet 类（可以带有任何的 include 指令，但是没有 include 动作）表示。这既包括 servlet 又包括被编译成 servlet 的 JSP 页面</p>
+<p>2）request是是代表与 Web 客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个 Web 组件（由于 forward 指令和 include 动作的关系）</p>
+<p>3）session是是代表与用于某个 Web 客户机的一个用户体验相关的对象和属性。一个 Web 会话可以也经常会跨越多个客户机请求</p>
+<p>4）application是是代表与整个 Web 应用程序相关的对象和属性。这实质上是跨越整个 Web 应用程序，包括多个页面、请求和会话的一个全局作用域</p>
+<h2 id="request对象的主要方法">Request对象的主要方法</h2>
+<p>setAttribute(String name,Object)：设置名字为name的request的参数值<br>
+getAttribute(String name)：返回由name指定的属性值<br>
+getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例<br>
+getCookies()：返回客户端的所有Cookie对象，结果是一个Cookie数组<br>
+getCharacterEncoding()：返回请求中的字符编码方式<br>
+getContentLength()：返回请求的Body的长度<br>
+getHeader(String name)：获得HTTP协议定义的文件头信息<br>
+getHeaders(String name)：返回指定名字的request Header的所有值，结果是一个枚举的实例<br>
+getHeaderNames()：返回所以request Header的名字，结果是一个枚举的实例<br>
+getInputStream()：返回请求的输入流，用于获得请求中的数据<br>
+getMethod()：获得客户端向服务器端传送数据的方法<br>
+getParameter(String name)：获得客户端传送给服务器端的有name指定的参数值<br>
+getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例<br>
+getParameterValues(String name)：获得有name指定的参数的所有值<br>
+getProtocol()：获取客户端向服务器端传送数据所依据的协议名称<br>
+getQueryString()：获得查询字符串<br>
+getRequestURI()：获取发出请求字符串的客户端地址<br>
+getRemoteAddr()：获取客户端的IP地址<br>
+getRemoteHost()：获取客户端的名字<br>
+getSession([Boolean create])：返回和请求相关Session<br>
+getServerName()：获取服务器的名字<br>
+getServletPath()：获取客户端所请求的脚本文件的路径<br>
+getServerPort()：获取服务器的端口号<br>
+removeAttribute(String name)：删除请求中的一个属性</p>
+<h2 id="servlet执行时一般实现哪几个方法">Servlet执行时一般实现哪几个方法？</h2>
+<p>public void init(ServletConfig config)<br>
+public ServletConfig getServletConfig()<br>
+public String getServletInfo()<br>
+public void service(ServletRequest request,ServletResponse response)<br>
+public void destroy()</p>
+<h2 id="描述cookie和session的作用区别和各自的应用范围session工作原理">描述Cookie和Session的作用，区别和各自的应用范围，Session工作原理。</h2>
+<p>1）cookie 是一种发送到客户浏览器的文本串句柄，并保存在客户机硬盘上，可以用来在某个WEB站点会话间持久的保持数据。</p>
+<p>2）session其实指的就是访问者从到达某个特定主页到离开为止的那段时间。 Session其实是利用Cookie进行信息处理的，当用户首先进行了请求后，服务端就在用户浏览器上创建了一个Cookie，当这个Session结束时，其实就是意味着这个Cookie就过期了。</p>
+<p>注：为这个用户创建的Cookie的名称是aspsessionid。这个Cookie的唯一目的就是为每一个用户提供不同的身份认证。</p>
+<p>3）cookie和session的共同之处在于：cookie和session都是用来跟踪浏览器用户身份的会话方式。</p>
+<p>4）cookie 和session的区别是：cookie数据保存在客户端，session数据保存在服务器端。</p>
+<p>5）session工作原理：session技术中所有的数据都保存在服务器上，客户端每次请求服务器的时候会发送当前会话的sessionid，服务器根据当前sessionid判断相应的用户数据标志，以确定用户是否登录或具有某种权限。</p>
+<h2 id="隐含对象是什么意思有哪些隐含对象内置对象">隐含对象是什么意思？有哪些隐含对象？内置对象</h2>
+<p>JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：<br>
+内置对象就是不需要声明和创建，直接可以使用的对象<br>
+out<br>
+可以向浏览器输出内容<br>
+request<br>
+请求<br>
+response<br>
+响应<br>
+pageContext<br>
+当前页面的上下文，可以获取其他的内置对象<br>
+session<br>
+会话，一般存储用户信息<br>
+applicaton<br>
+应用程序<br>
+page<br>
+指的是当前页面，相当于this<br>
+config<br>
+存储配置信息<br>
+exception</p>
+<h2 id="异常什么是表达式expression">异常什么是表达式(Expression)？</h2>
+<p>JSP表达式是Web服务器把脚本语言表达式的值转化成一个String对象，插入到返回给客户端的数据流中。表达式是在&lt;%=和%&gt;这两个标签之间定义的。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#servlet%E6%98%AF%E4%BB%80%E4%B9%88">Servlet是什么？</a></li>
+<li><a href="#%E8%AF%B4%E4%B8%80%E8%AF%B4servlet%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">说一说Servlet的生命周期?</a></li>
+<li><a href="#jsp%E5%92%8Cservlet%E6%9C%89%E5%93%AA%E4%BA%9B%E7%9B%B8%E5%90%8C%E7%82%B9%E5%92%8C%E4%B8%8D%E5%90%8C%E7%82%B9%E4%BB%96%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88">JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？</a></li>
+<li><a href="#%E5%9B%9B%E7%A7%8D%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA%E6%8A%80%E6%9C%AF">四种会话跟踪技术</a></li>
+<li><a href="#request%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95">Request对象的主要方法</a></li>
+<li><a href="#servlet%E6%89%A7%E8%A1%8C%E6%97%B6%E4%B8%80%E8%88%AC%E5%AE%9E%E7%8E%B0%E5%93%AA%E5%87%A0%E4%B8%AA%E6%96%B9%E6%B3%95">Servlet执行时一般实现哪几个方法？</a></li>
+<li><a href="#%E6%8F%8F%E8%BF%B0cookie%E5%92%8Csession%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8C%BA%E5%88%AB%E5%92%8C%E5%90%84%E8%87%AA%E7%9A%84%E5%BA%94%E7%94%A8%E8%8C%83%E5%9B%B4session%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">描述Cookie和Session的作用，区别和各自的应用范围，Session工作原理。</a></li>
+<li><a href="#%E9%9A%90%E5%90%AB%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%E6%9C%89%E5%93%AA%E4%BA%9B%E9%9A%90%E5%90%AB%E5%AF%B9%E8%B1%A1%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1">隐含对象是什么意思？有哪些隐含对象？内置对象</a></li>
+<li><a href="#%E5%BC%82%E5%B8%B8%E4%BB%80%E4%B9%88%E6%98%AF%E8%A1%A8%E8%BE%BE%E5%BC%8Fexpression">异常什么是表达式(Expression)？</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sunzhujie.github.io/post/springboot-mian-shi-ti">
+              <h3 class="post-title">
+                SpringBoot面试题
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://sunzhujie.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

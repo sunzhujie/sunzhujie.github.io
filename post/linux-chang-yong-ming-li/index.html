@@ -1,0 +1,339 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux常用命令 | 阿杰笔记</title>
+<meta name="description" content="等你等了八万里，如期未至" />
+<link rel="shortcut icon" href="https://sunzhujie.github.io/favicon.ico?v=1566214547869">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sunzhujie.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://sunzhujie.github.io">
+  <img class="avatar" src="https://sunzhujie.github.io/images/avatar.png?v=1566214547869" alt="">
+  </a>
+  <h1 class="site-title">
+    阿杰笔记
+  </h1>
+  <p class="site-description">
+    等你等了八万里，如期未至
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Linux常用命令
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-08-19
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <ul>
+<li>df -h磁盘使用情况</li>
+<li>su tom 切换用户</li>
+<li>pwd 当前目录</li>
+<li>ls 当前目录下文件目录 ls -l /usr为该命令要操作的对象</li>
+<li>cd		回到家目录</li>
+<li>cd ~	回到家目录</li>
+<li>cd /	回到根目录</li>
+<li>cd -	回到上次工作目录</li>
+<li>cd .	当前目录</li>
+<li>cd . .	回到上一级目录</li>
+<li>mkdir创建一个或多个新的空目录，常用选项参数“-p”用于递归创建多层目录<br>
+Linux标记<br>
+2019-08-16 3 min read<br>
+命令<br>
+命令格式：命令 参数 目标对象</li>
+</ul>
+<p>ls -l /ur 以列表的方式查看usr文件下目录文件<br>
+cd：切换目录</p>
+<p>-cd 回到家目录</p>
+<p>-cd~ 回到家目录</p>
+<p>-cd / 回到根目录</p>
+<p>-cd - 回到上次工作目录</p>
+<p>-cd . 当前目录</p>
+<p>-cd .. 回到上一级目录</p>
+<p>ls：查看当前文件夹下的所有文件夹</p>
+<p>ls -h 以单位显示大小<br>
+ls -l 列示文件和目录的详细信息，还有一种简介的写法：ll<br>
+pwd：查看当前工作目录的完整路径</p>
+<p>df：查看当前磁盘使用情况</p>
+<p>-h：使用K、M、G为单位显示<br>
+-a：显示所有文件系统的磁盘使用情况<br>
+-k：以k字节为单位显示<br>
+-T： 显示文件系统类型（T必须大写）<br>
+无论在哪个文件下输入 df -h等命令，都会显示同样的信息，因为该命令显示的是当前磁盘的使用情况<br>
+du：查看当前目录空间使用情况</p>
+<p>-h： 使用K、M、G为单位显示<br>
+-k：以KB(1024bytes)为单位输出<br>
+-m ：以MB为单位输出<br>
+-s：仅显示总计，只列出最后加总的值<br>
+可以组合使用，比如打开usr文件夹，键入du -hs 或者du -sh 可以查看以GB为单位显示的总计<br>
+yum install tree：安装tree</p>
+<p>su 用户名 ：切换用户</p>
+<p>su root<br>
+mkdir ：创建一个或者多个目录，用-p递归创建目录</p>
+<p>mkdir demo<br>
+mkdir a/b/c -p ：递归创建多级目录 mkdir -p a/b/c 也可以<br>
+touch：创建新文件</p>
+<p>touch a.log</p>
+<blockquote>
+<p>： 创建新文件</p>
+</blockquote>
+<blockquote>
+<p>b.log<br>
+cp：复制</p>
+</blockquote>
+<p>a目录下有a.log和b目录，将a.log，复制到b目录中：cd a 然后 cp a.log b<br>
+a目录下有a.log和b目录，将a.log，复制到b目录中，并改名为b.log：cd a 然后 cp a.log b/b.log<br>
+demo目录下有a目录，a目录下有b目录，b目录下有多个文件，将b目录复制到demo目录下和a目录同级：：cd demo/a 然后 cp b .. 会显示略过目录，因为b目录下还有文件，所以需要递归复制：cp -r b ..<br>
+mv：移动</p>
+<p>和上面的命令都一样，只不过把cp改成mv<br>
+重命名：比如把a目录下的a.log改成ab.log：mv a.log ab.log<br>
+删除</p>
+<p>删除a目录下的a.log：进入a目录后，rm a.log需要输入y确认才能删除，可以使用 rm -rf a.log来直接删除，不询问<br>
+可以直接用多个空格分隔多个文件名，批量删除<br>
+查看文件内容</p>
+<p>cat 文件名</p>
+<p>cat -n显示文件内容时，打印行号</p>
+<p>cat –b同上，但排除空行</p>
+<p>more 文件名：分屏查看，回车翻页，只能向下翻页，q或者ctrl + c退出</p>
+<p>less 文件名：分屏查看，可以向上向下键翻页 ，只有q能退出<br>
+head 文件名：前十行</p>
+<p>head -n x：显示文件头x行</p>
+<p>tail 文件名：后十行</p>
+<p>tail -n x：显示文件末尾x行<br>
+tail -f ：实时显示文件变化</p>
+<p>压缩</p>
+<p>zip 压缩文件名 源文件 ：压缩文件<br>
+zip a.zip a.log<br>
+或者直接写zip a a.log<br>
+zip -r 压缩文件名 源目录 ：压缩目录<br>
+zip -r a.zip a<br>
+unzip 压缩文件名 ：解压缩<br>
+unzip a.zip<br>
+压缩</p>
+<p>tar -zcvf 压缩包名.tar.gz 源文件<br>
+选项</p>
+<p>z : 压缩为tar.gz</p>
+<p>解压缩</p>
+<p>tar -zxvf 压缩包名.tar.gz</p>
+<p>选项</p>
+<p>x: 解压缩.tar.gz格式</p>
+<p>压缩多个文件：tar -zcvf test.tar.gz a.log b.log</p>
+<p>压缩目录不需要加-r，和压缩文件一样</p>
+<p>rpm -qa查看当前系统安装了哪些软件</p>
+<p>rpm -qa | grep gcc 查看gcc有没有安装<br>
+yum<br>
+安装软件<br>
+yum install xxx<br>
+搜搜<br>
+yum search java<br>
+vim<br>
+操作模式<br>
+命令模式<br>
+控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入Insert mode下，或者到 last line mode。</p>
+<p>插入模式<br>
+只有在Insert mode下，才可以做文字输入，按「ESC」键可回到命令模式。</p>
+<p>底行模式<br>
+将文件保存或退出vi，也可以设置编辑环境，如寻找字符串、列出行号……等。</p>
+<p>基本命令<br>
+vim + 文件名：打开后光标位于文件最后一行<br>
+vim +n 文件名：打开后光标位于文件第n行<br>
+vim +/xxx 文件名：打开后光标位于xxx所在的行，可以用于快速定位指定内容<br>
+vim 文件a 文件b 文件c：打开（创建多个文件），底行模式“n”切换</p>
+<p>2</p>
+<p>3</p>
+<p>Linux<br>
+安装Java<br>
+yum search java :<br>
+yum install java-1.8.0-openjdk ：安装jre<br>
+yum install java-1.8.0-openjdk-devel ：安装jdk，直接安装这个也可以，上面的那个会被自动安装<br>
+安装的时候加-y参数可以不用输入y安装，直接安装<br>
+安装mysql<br>
+yum search mariadb<br>
+yum install mariadb-server<br>
+启动sql：systemctl start mariadb<br>
+设置用户名和密码：mysqladmin -u root password zhangjia<br>
+允许mysql的root用户远程登录<br>
+GRANT ALL PRIVILEGES ON <em>.</em> TO 'root'@'%' IDENTIFIED BY '123456';<br>
+GRANT ALL PRIVILEGES ON <em>.</em> TO 'root'@'localhost' IDENTIFIED BY '123456';<br>
+FLUSH PRIVILEGES;</p>
+<h1 id="其中by后面的密码就是yml文件中配置的密码yml中的密码要随着这个密码而更改还可以直接用mysqladmin来设置这个by后面的密码">其中by后面的密码就是yml文件中配置的密码，yml中的密码要随着这个密码而更改，还可以直接用mysqladmin来设置这个by后面的密码</h1>
+<p>安装Tomcat<br>
+打开安装目录：cd /usr/local</p>
+<p>下载Tomcat：wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.43/bin/apache-tomcat-8.5.43.tar.gz</p>
+<p>解压缩安装包：tar -zxvf apache-tomcat-8.5.43.tar.gz</p>
+<p>启动Tomcat：进入bin目录，输入./startup.sh启动tomcat</p>
+<p>4.1关闭tomcat：<code>./showdown.sh</code><br>
+关闭防火墙：systemctl stop firewalld.service</p>
+<p>ifconfig查看ip</p>
+<p>部署SpringBoot的应用程序<br>
+将项目打包<br>
+mvn package<br>
+导出数据<br>
+使用Navicat导出SQL文件<br>
+导入数据<br>
+使用Navicat导入SQL文件<br>
+将打包好的jar文件上传到服务器<br>
+使用xftp上传文件<br>
+在服务器启动jar文件<br>
+java -jar xxx.jar<br>
+后台启动：nohup java -jar xxx.jar &amp;<br>
+通过进程结束程序<br>
+ps -ef | grep java，可以看到进程的id<br>
+kill 进程id<br>
+自动联网<br>
+cd /etc/sysconfig/netword-scripts<br>
+vim ifcfg ，将ONBOOT修改为yes<br>
+补充<br>
+红色：压缩文件<br>
+蓝色：目录<br>
+linux不是根据扩展名来判断文件类型，但是建议写上<br>
+根目录下bin/sib和usr下bin/sbib的区别<br>
+根目录下的bin和sbin存放系统本身带的一些命令<br>
+usr目下的bin和sbin存放的是一些后来安装的软件命令<br>
+root用户的家目录是root，普通用户的家目录是home下的用户名的那个文件夹<br>
+任意目录下直接输入cd回车，也可以进入家目录<br>
+ctrl + l ：清屏<br>
+查找tree命令在哪：which tree</p>
+<p>联网：dhclient</p>
+<p>重启 init 6</p>
+<p>关机 init 0</p>
+<p>向上翻页：shift + pg up</p>
+<p>向下翻页：shift + pg on</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E5%85%B6%E4%B8%ADby%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%86%E7%A0%81%E5%B0%B1%E6%98%AFyml%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%9A%84%E5%AF%86%E7%A0%81yml%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E8%A6%81%E9%9A%8F%E7%9D%80%E8%BF%99%E4%B8%AA%E5%AF%86%E7%A0%81%E8%80%8C%E6%9B%B4%E6%94%B9%E8%BF%98%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E7%94%A8mysqladmin%E6%9D%A5%E8%AE%BE%E7%BD%AE%E8%BF%99%E4%B8%AAby%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AF%86%E7%A0%81">其中by后面的密码就是yml文件中配置的密码，yml中的密码要随着这个密码而更改，还可以直接用mysqladmin来设置这个by后面的密码</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sunzhujie.github.io/post/ajax-mian-shi-ti">
+              <h3 class="post-title">
+                Ajax面试题
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://sunzhujie.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
